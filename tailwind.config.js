@@ -1,6 +1,14 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  purge: {
+    content: [
+      './pages/**/*.{js,ts,jsx,tsx}',
+      './components/**/*.{js,ts,jsx,tsx}'
+    ],
+    options: {
+      keyframes: true
+    }
+  },
   darkMode: false,
   theme: {
     extend: {
@@ -19,9 +27,6 @@ module.exports = {
         yatsiBg: '#2e3b83'
       }
     }
-  },
-  variants: {
-    extend: {}
   },
   plugins: [require('@tailwindcss/forms')]
 }

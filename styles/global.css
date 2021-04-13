@@ -12,43 +12,32 @@
   }
 
   .Imsak {
-    @apply bg-imsakBg text-imsak grid-imsak;
-  }
-  .Gunes {
-    @apply bg-gunesBg text-gunes grid-gunes;
-  }
-  .Ogle {
-    @apply bg-ogleBg text-ogle grid-ogle;
-  }
-  .Ikindi {
-    @apply bg-ikindiBg text-ikindi grid-ikindi;
-  }
-  .Aksam {
-    @apply bg-aksamBg text-aksam grid-aksam;
-  }
-  .Yatsi {
-    @apply bg-yatsiBg text-yatsi grid-yatsi;
-  }
-}
-
-@layer utilities {
-  .grid-imsak {
     grid-auto-rows: 3fr 3fr 2fr 1fr 1fr 1fr;
+    @apply bg-imsakBg text-imsak;
   }
 
-  .grid-gunes {
-    grid-auto-rows: 2fr 3fr 3fr 2fr 1fr 1fr
+  .Gunes {
+    grid-auto-rows: 2fr 3fr 3fr 2fr 1fr 1fr;
+    @apply bg-gunesBg text-gunes;
   }
 
-  .grid-ogle {
-    grid-auto-rows: 1fr 2fr 3fr 3fr 2fr 1fr
+  .Ogle {
+    grid-auto-rows: 1fr 2fr 3fr 3fr 2fr 1fr;
+    @apply bg-ogleBg text-ogle;
   }
 
-  .grid-ikindi {
-    grid-auto-rows: 1fr 1fr 2fr 3fr 3fr 1fr
+  .Ikindi {
+    grid-auto-rows: 1fr 1fr 2fr 3fr 3fr 1fr;
+    @apply bg-ikindiBg text-ikindi;
   }
 
-  .grid-aksam, .grid-yatsi {
-    grid-auto-rows: 1fr 1fr 2fr 3fr 4fr 4fr
+  .Aksam {
+    grid-auto-rows: 1fr 1fr 2fr 3fr 4fr 4fr;
+    @apply bg-aksamBg text-aksam;
+  }
+
+  .Yatsi {
+    grid-auto-rows: 1fr 1fr 2fr 3fr 4fr 4fr;
+    @apply bg-yatsiBg text-yatsi;
   }
 }
