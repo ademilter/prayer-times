@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply block w-full rounded border-gray-300 shadow-sm focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50;
+  }
+
+  .button {
+    @apply bg-black text-white px-4 py-2 rounded;
+  }
+
+  .Imsak {
+    @apply bg-imsakBg text-imsak grid-imsak;
+  }
+  .Gunes {
+    @apply bg-gunesBg text-gunes grid-gunes;
+  }
+  .Ogle {
+    @apply bg-ogleBg text-ogle grid-ogle;
+  }
+  .Ikindi {
+    @apply bg-ikindiBg text-ikindi grid-ikindi;
+  }
+  .Aksam {
+    @apply bg-aksamBg text-aksam grid-aksam;
+  }
+  .Yatsi {
+    @apply bg-yatsiBg text-yatsi grid-yatsi;
+  }
+}
+
+@layer utilities {
+  .grid-imsak {
+    grid-auto-rows: 3fr 3fr 2fr 1fr 1fr 1fr;
+  }
+
+  .grid-gunes {
+    grid-auto-rows: 2fr 3fr 3fr 2fr 1fr 1fr
+  }
+
+  .grid-ogle {
+    grid-auto-rows: 1fr 2fr 3fr 3fr 2fr 1fr
+  }
+
+  .grid-ikindi {
+    grid-auto-rows: 1fr 1fr 2fr 3fr 3fr 1fr
+  }
+
+  .grid-aksam, .grid-yatsi {
+    grid-auto-rows: 1fr 1fr 2fr 3fr 4fr 4fr
+  }
+}
