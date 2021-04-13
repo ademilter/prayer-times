@@ -1,6 +1,6 @@
 {
-  "name": "ezan-vakti",
-  "version": "0.0.1",
+  "name": "prayer-times",
+  "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
