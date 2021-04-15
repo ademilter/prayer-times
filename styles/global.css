@@ -11,33 +11,160 @@
     @apply bg-black text-white px-4 py-2 rounded;
   }
 
-  .Imsak {
+  .pt-Imsak {
     grid-auto-rows: 3fr 3fr 2fr 1fr 1fr 1fr;
     @apply bg-imsakBg text-imsak;
   }
 
-  .Gunes {
+  .pt-Imsak .Ogle {
+    opacity: .9;
+    background-color: #a8e3fb
+  }
+
+  .pt-Imsak .Ikindi {
+    opacity: .8;
+    background-color: #97dcf8
+  }
+
+  .pt-Imsak .Aksam {
+    opacity: .7;
+    background-color: #8bd6f5
+  }
+
+  .pt-Imsak .Yatsi {
+    opacity: .6;
+    background-color: #83d2f3
+  }
+
+  .pt-Gunes {
     grid-auto-rows: 2fr 3fr 3fr 2fr 1fr 1fr;
     @apply bg-gunesBg text-gunes;
   }
 
-  .Ogle {
+  .pt-Gunes .Imsak {
+    opacity: .9;
+    background-color: #fde2aa
+  }
+
+  .pt-Gunes .Ikindi {
+    opacity: .9;
+    background-color: #fada98
+  }
+
+  .pt-Gunes .Aksam {
+    opacity: .8;
+    background-color: #f7d387
+  }
+
+  .pt-Gunes .Yatsi {
+    opacity: .7;
+    background-color: #f4cd7b
+  }
+
+  .pt-Ogle {
     grid-auto-rows: 1fr 2fr 3fr 3fr 2fr 1fr;
     @apply bg-ogleBg text-ogle;
   }
 
-  .Ikindi {
+  .pt-Ogle .Imsak {
+    opacity: .8;
+    background-color: #f9e07b
+  }
+
+  .pt-Ogle .Gunes {
+    opacity: .9;
+    background-color: #fce68c
+  }
+
+  .pt-Ogle .Aksam {
+    opacity: .8;
+    background-color: #f9e07b
+  }
+
+  .pt-Ogle .Yatsi {
+    opacity: .7;
+    background-color: #f5da6b
+  }
+
+  .pt-Ikindi {
     grid-auto-rows: 1fr 1fr 2fr 3fr 3fr 1fr;
     @apply bg-ikindiBg text-ikindi;
   }
 
-  .Aksam {
+  .pt-Ikindi .Imsak {
+    opacity: .7;
+    background-color: #f6b480
+  }
+
+  .pt-Ikindi .Gunes {
+    opacity: .8;
+    background-color: #fabf91
+  }
+
+  .pt-Ikindi .Ogle {
+    opacity: .9;
+    background-color: #fdcaa3
+  }
+
+  .pt-Ikindi .Yatsi {
+    opacity: .9;
+    background-color: #fabf91
+  }
+
+  .pt-Aksam {
     grid-auto-rows: 1fr 1fr 2fr 3fr 4fr 4fr;
     @apply bg-aksamBg text-aksam;
   }
 
-  .Yatsi {
+  .pt-Aksam .Imsak {
+    opacity: .6;
+    background-color: #4ba6ec
+  }
+
+  .pt-Aksam .Gunes {
+    opacity: .7;
+    background-color: #56aef0
+  }
+
+  .pt-Aksam .Ogle {
+    opacity: .8;
+    background-color: #65b7f5
+  }
+
+  .pt-Aksam .Ikindi {
+    opacity: .9;
+    background-color: #76c0f9
+  }
+
+  .pt-Yatsi {
     grid-auto-rows: 1fr 1fr 2fr 3fr 4fr 4fr;
     @apply bg-yatsiBg text-yatsi;
   }
+
+  .pt-Yatsi .Imsak {
+    order: 1
+  }
+
+  .pt-Yatsi .Gunes {
+    opacity: .6;
+    background-color: #20253f
+  }
+
+  .pt-Yatsi .Ogle {
+    opacity: .7;
+    background-color: #242a4b
+  }
+
+  .pt-Yatsi .Ikindi {
+    opacity: .8;
+    background-color: #28305b
+  }
+
+  .pt-Yatsi .Aksam {
+    opacity: .9;
+    background-color: #2b356c
+  }
 }
+
+
+

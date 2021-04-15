@@ -6,16 +6,18 @@ import DATA from '../lib/data.json'
 import useTimer from '../hooks/useTimer'
 import { VAKITLER } from '../lib/constant'
 
-function Home({ today }) {
-  const [time, timer] = useTimer(today)
+function Home({ today, tomorrow }) {
+  const [time, timer] = useTimer(today, tomorrow)
 
   if (!time || !timer)
-    // tailwind purge whitelist çalışmadığı için;
+    // tailwind-jit ile purge-whitelist çalışmadığı için;
     // bu sınıfların silinmemesi için ön tanımlı olarak getiriyorum
-    return <div className="Yatsi Aksam Ikindi Ogle Gunes Imsak" />
+    return (
+      <div className="pt-Yatsi pt-Aksam pt-Ikindi pt-Ogle pt-Gunes pt-Imsak" />
+    )
 
   return (
-    <div className={cn('h-screen grid', [time.current])}>
+    <div className={cn('h-screen grid', `pt-${time.current}`)}>
       {Object.keys(VAKITLER).map((key) => {
         const isCurrent = key === time.current
         const isNext = key === time.next
@@ -56,8 +58,14 @@ export async function getStaticProps() {
     return date.hasSame(DateTime.local(), 'day')
   })
 
+  // eğer mevcut vakit Yatsi ise ve 00:00'dan önce ise sonraki günün Imsak vaktine ihtiyaç var
+  const tomorrow = data.find((day) => {
+    const date = DateTime.fromISO(day.MiladiTarihUzunIso8601)
+    return date.hasSame(DateTime.local().plus({ days: 1 }), 'day')
+  })
+
   return {
-    props: { today },
+    props: { today, tomorrow },
     // kullanıcı sayısı farketmeksizin günde 1 defa api'ye gider cache'de saklar ve aynı veriyi geri döndürür
     revalidate: 86400 // 24 hours
   }

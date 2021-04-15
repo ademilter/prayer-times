@@ -1,0 +1,12 @@
+.time {
+  @apply
+  relative
+  flex items-center
+  px-8 py-2
+  min-h-[90px]
+}
+
+.value {
+  @apply
+  text-xl font-bold
+}

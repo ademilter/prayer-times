@@ -1,0 +1,8 @@
+.timer {
+  @apply
+  absolute right-8 top-full
+  py-2 px-4
+  bg-white text-gray-900
+  text-3xl tabular-nums font-medium
+  shadow-md rounded-md
+}
