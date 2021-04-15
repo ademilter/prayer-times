@@ -4,28 +4,16 @@ import cn from 'classnames'
 import DATA from '../lib/data.json'
 import useTimer from '../hooks/useTimer'
 import { VAKITLER } from '../lib/constant'
+import styles from './index.module.css'
 
 function Home({ data }) {
   const [time, timer, error] = useTimer(data)
 
-  if (error)
-    // tailwind-jit ile purge-whitelist çalışmadığı için;
-    // bu sınıfların silinmemesi için ön tanımlı olarak getiriyorum
-    return (
-      <div>
-        <p>{error}</p>
-      </div>
-    )
-
-  if (!timer)
-    // tailwind-jit ile purge-whitelist çalışmadığı için;
-    // bu sınıfların silinmemesi için ön tanımlı olarak getiriyorum
-    return (
-      <div className="pt-Yatsi pt-Aksam pt-Ikindi pt-Ogle pt-Gunes pt-Imsak" />
-    )
+  if (error) return <p>{error}</p>
+  if (!timer) return <div className={styles.loading} />
 
   return (
-    <div className={cn('h-screen grid', `pt-${time.current}`)}>
+    <div className={cn(styles.container, `pt-${time.current}`)}>
       {Object.keys(VAKITLER).map((key) => {
         const isCurrent = key === time.current
         const isNext = key === time.next

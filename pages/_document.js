@@ -74,7 +74,7 @@ class MyDocument extends Document {
           {/*/>*/}
         </Head>
 
-        <body className="antialiased bg-gray-900 text-gray-50">
+        <body className="antialiased bg-gray-900 text-gray-50 overflow-hidden">
           <Main />
           <NextScript />
         </body>
