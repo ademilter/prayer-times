@@ -1,7 +1,14 @@
 import '../styles/global.css'
 import Head from 'next/head'
+import { useEffect } from 'react'
+import { forceScreenSize } from '../lib/helper'
 
 export default function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    if (!process.browser) return
+    forceScreenSize(390, 600)
+  }, [])
+
   return (
     <>
       <Head>
