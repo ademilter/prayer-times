@@ -5,14 +5,15 @@ export default function useInterval(callback, delay) {
 
   useEffect(() => {
     savedCallback.current = callback
-  })
+  }, [callback])
 
   useEffect(() => {
     function tick() {
       savedCallback.current()
     }
-
-    let id = setInterval(tick, delay)
-    return () => clearInterval(id)
+    if (delay !== null) {
+      let id = setInterval(tick, delay)
+      return () => clearInterval(id)
+    }
   }, [delay])
 }

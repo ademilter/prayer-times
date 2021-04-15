@@ -1,4 +1,3 @@
-import { DateTime } from 'luxon'
 import Time from '../components/time'
 import Timer from '../components/timer'
 import cn from 'classnames'
@@ -6,10 +5,19 @@ import DATA from '../lib/data.json'
 import useTimer from '../hooks/useTimer'
 import { VAKITLER } from '../lib/constant'
 
-function Home({ today, tomorrow }) {
-  const [time, timer] = useTimer(today, tomorrow)
+function Home({ data }) {
+  const [time, timer, error] = useTimer(data)
 
-  if (!time || !timer)
+  if (error)
+    // tailwind-jit ile purge-whitelist çalışmadığı için;
+    // bu sınıfların silinmemesi için ön tanımlı olarak getiriyorum
+    return (
+      <div>
+        <p>{error}</p>
+      </div>
+    )
+
+  if (!timer)
     // tailwind-jit ile purge-whitelist çalışmadığı için;
     // bu sınıfların silinmemesi için ön tanımlı olarak getiriyorum
     return (
@@ -28,7 +36,7 @@ function Home({ today, tomorrow }) {
             isCurrent={isCurrent}
             isNext={isNext}
             vakit={key}
-            time={today[key]}
+            time={time.today[key]}
           >
             {isCurrent && <Timer value={timer} />}
           </Time>
@@ -53,19 +61,8 @@ export async function getStaticProps() {
     data = await response.json()
   }
 
-  const today = data.find((day) => {
-    const date = DateTime.fromISO(day.MiladiTarihUzunIso8601)
-    return date.hasSame(DateTime.local(), 'day')
-  })
-
-  // eğer mevcut vakit Yatsi ise ve 00:00'dan önce ise sonraki günün Imsak vaktine ihtiyaç var
-  const tomorrow = data.find((day) => {
-    const date = DateTime.fromISO(day.MiladiTarihUzunIso8601)
-    return date.hasSame(DateTime.local().plus({ days: 1 }), 'day')
-  })
-
   return {
-    props: { today, tomorrow },
+    props: { data },
     // kullanıcı sayısı farketmeksizin günde 1 defa api'ye gider cache'de saklar ve aynı veriyi geri döndürür
     revalidate: 86400 // 24 hours
   }
