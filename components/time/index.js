@@ -1,4 +1,5 @@
 import cn from 'classnames'
+import LANG from '../../lib/lang'
 import styles from './styles.module.css'
 
 export default function Time({ children, isCurrent, isNext, vakit, time }) {
@@ -6,10 +7,10 @@ export default function Time({ children, isCurrent, isNext, vakit, time }) {
     <div className={cn(styles.time, vakit)}>
       {children}
       <div>
-        <div>{vakit}</div>
+        <div>{LANG.times[vakit]}</div>
         <div
           className={cn(styles.value, {
-            'text-2xl': isCurrent || isNext
+            '!text-[1.7rem]': isCurrent || isNext
           })}
         >
           {time}

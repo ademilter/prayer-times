@@ -10,7 +10,7 @@ function Home({ data }) {
   const [time, timer, error] = useTimer(data)
 
   if (error) return <p>{error}</p>
-  if (!timer) return <div className={styles.loading} />
+  if (!timer) return <div>loading</div>
 
   return (
     <div className={cn(styles.container, `pt-${time.current}`)}>

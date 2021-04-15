@@ -1,21 +1,5 @@
-/*
-  tailwind-jit ile purge-whitelist çalışmadığı için;
-  bu sınıfların silinmemesi için ön tanımlı olarak getiriyorum
- */
-
-.loading {
-  @apply
-  pt-Yatsi
-  pt-Aksam
-  pt-Ikindi
-  pt-Ogle
-  pt-Gunes
-  pt-Imsak
-}
-
 .container {
   @apply
-  fixed left-0 top-0
   w-screen h-screen
   grid
 }
