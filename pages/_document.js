@@ -10,7 +10,8 @@ class MyDocument extends Document {
     const meta = {
       url: 'https://ezan-vakti.vercel.app',
       name: 'Ezan Vakti',
-      description: 'Ezan Vakti'
+      description: 'Yaşadığınız bölgenin ezan vakitlerini gösterir.',
+      author: '@ademilter'
     }
 
     return (
@@ -31,47 +32,46 @@ class MyDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/static/icons/apple-touch-icon.png"
+            href="/icons/icon-apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/static/icons/favicon-32x32.png"
+            href="/icons/icon-favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/icons/favicon-16x16.png"
+            href="/icons/icon-favicon-16x16.png"
           />
           <link rel="manifest" href="/static/manifest.json" />
           <link
             rel="mask-icon"
-            href="/static/icons/safari-pinned-tab.svg"
+            href="/icons/icon-safari-pinned-tab.svg"
             color="#5bbad5"
           />
-          <link rel="shortcut icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://yourdomain.com" />
+          <meta name="twitter:url" content={meta.url} />
           <meta name="twitter:title" content={meta.name} />
           <meta name="twitter:description" content={meta.description} />
-          <meta
-            name="twitter:image"
-            content="https://yourdomain.com/static/icons/android-chrome-192x192.png"
-          />
-          <meta name="twitter:creator" content="@ademilter" />
+          {/*<meta*/}
+          {/*  name="twitter:image"*/}
+          {/*  content="https://yourdomain.com/static/icons/android-chrome-192x192.png"*/}
+          {/*/>*/}
+          <meta name="twitter:creator" content={meta.author} />
 
           <meta property="og:type" content="website" />
           <meta property="og:title" content={meta.name} />
           <meta property="og:description" content={meta.description} />
           <meta property="og:site_name" content={meta.name} />
           <meta property="og:url" content={meta.url} />
-          <meta
-            property="og:image"
-            content="https://yourdomain.com/static/icons/apple-touch-icon.png"
-          />
+          {/*<meta*/}
+          {/*  property="og:image"*/}
+          {/*  content="https://yourdomain.com/static/icons/apple-touch-icon.png"*/}
+          {/*/>*/}
         </Head>
 
         <body className="antialiased bg-gray-900 text-gray-50">
